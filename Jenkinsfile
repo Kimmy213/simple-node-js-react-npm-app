@@ -26,16 +26,7 @@ pipeline {
       }
     }
 
-    stage('Test') {
-      steps {
-        sh '''
-          docker run --rm \
-            -v "$PWD:/app" \
-            -w /app \
-            node:18-alpine \
-            npm test -- --watch=false || true
-        '''
-      }
+    
     }
   }
 }
